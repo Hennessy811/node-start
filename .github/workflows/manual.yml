@@ -23,3 +23,4 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           HOST: 94.103.94.231
           PROJECT: node-starter
+          APP_CONFIG: ${{ secrets.APP_CONFIG }}
