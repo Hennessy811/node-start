@@ -6,21 +6,20 @@ name: Manual workflow
 # or API.
 on:
   push:
-    branches: 
+    branches:
       - master
       - release/*
-      
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-     - uses: actions/checkout@v1
-     - name: Dokku deploy
-       uses: vitalyliber/dokku-github-action@v6.0
-       env:
-         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-         HOST: 94.103.94.231
-         PROJECT: node-starter
-         APP_CONFIG: ${{ secrets.APP_CONFIG }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Dokku deploy
+        uses: vitalyliber/dokku-github-action@v6.0
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          HOST: 94.103.94.231
+          PROJECT: node-starter
